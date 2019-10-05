@@ -1,1 +1,1 @@
-# podstawy-programowania
+# Podstawy Programowania
