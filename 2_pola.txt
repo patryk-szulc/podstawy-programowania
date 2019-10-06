@@ -1,0 +1,43 @@
+using System;
+
+namespace Inputz {
+    class Program {
+        static void Main(string[] args) {
+            string strA = "";
+            string strH = "";
+            double a = 0;
+
+            Console.WriteLine("Wybierz program:\n1. Pole kwadratu\n2. Pole trojkata");
+            int menuInput = int.Parse(Console.ReadLine());
+
+            switch (menuInput) {
+                case 1:
+                    Console.Write("Podaj bok A [cm]:");
+                    a = double.Parse(Console.ReadLine());
+                    Console.WriteLine("Pole wynosi: " + (a * a) + " cm^2");
+                    break;
+                case 2:
+                    Console.Write("Podaj parzysty bok A [cm]:");
+                    strA = Console.ReadLine();
+                    Console.Write("Podaj parzysta wysokosc [cm]:");
+                    strH = Console.ReadLine();
+
+                    if (
+                        double.TryParse(strA, out a) == true
+                     && double.TryParse(strH, out h) == true
+                     && double.Parse(strA) % 2 == 0
+                     && double.Parse(strH) % 2 == 0
+                     ) {
+                        Console.WriteLine("Pole wynosi: " + (0.5 * double.Parse(strA) * double.Parse(strH)) + " cm^2");
+                    } else {
+                        Console.WriteLine("Nie podales liczby lub liczba jest nieparzysta!");
+                    }
+                    break;
+                default:
+                    Console.WriteLine("No tego w menu nie by³o ;E");
+                    break;
+            }
+            Console.ReadLine();
+        }
+    }
+}
